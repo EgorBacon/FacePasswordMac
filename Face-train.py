@@ -66,7 +66,7 @@ def normalize_faces(image, faces_coord):
 dir_path = os.path.dirname(os.path.realpath(__file__))
 for image in images:
         dir_path
-        detector = FaceDetector( "C:\\Users\\MiniM\\Documents\\Github\\FacePasswordMac\\data\\haarcascade_frontalface_default.xml") 
+        detector = FaceDetector("C:\\Users\\MiniM\\Documents\\Github\\FacePasswordMac\\data\\haarcascade_frontalface_default.xml") 
         faces_coord = detector.detect(image, True)
         faces = normalize_faces(image ,faces_coord)
         for i, face in enumerate(faces):
@@ -75,3 +75,4 @@ for image in images:
 
 #Comments
 """str(dir_path) + "data/" + "haarcascade_frontalface_default.xml"""
+"""C:\\Users\\MiniM\\Documents\\Github\\FacePasswordMac\\data\\haarcascade_frontalface_default.xml"""
