@@ -61,11 +61,11 @@ def normalize_faces(image, faces_coord):
 
     faces = cut_faces(image, faces_coord)
     faces = resize(faces)
-    
+    print("Faces-Trainer Initialised")
     return faces
 
 
-
+count = 0
 dir_path = os.path.dirname(os.path.realpath(__file__))
 for image in images:
     detector = FaceDetector(str(dir_path) + "/data" + "/haarcascade_frontalface_default.xml")   
@@ -75,6 +75,8 @@ for image in images:
         cv2.imwrite('%s.jpeg' % (count), faces[i])
         count += 1 
 
+print(str(count))
+print(str(faces[i]))
 #Comments
 #str(dir_path) + "data/" + "haarcascade_frontalface_default.xml
 #C:\\Users\\MiniM\\Documents\\Github\\FacePasswordMac\\data\\haarcascade_frontalface_default.xml
