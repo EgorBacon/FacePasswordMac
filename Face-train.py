@@ -61,13 +61,22 @@ def normalize_faces(image, faces_coord):
 
     faces = cut_faces(image, faces_coord)
     faces = resize(faces)
+<<<<<<< HEAD
     return faces
 count = 0
 
+=======
+    print("Faces-Trainer Initialised")
+    return faces
+
+
+count = 0
+>>>>>>> ab96f0e17f81a4a6425e90af11d77b992831c7c7
 dir_path = os.path.dirname(os.path.realpath(__file__))
 Unix_path_detector = str(dir_path) + "\\data\\" + "haarcascade_frontalface_default.xml"
 mac_path_detector = str(dir_path) + "/data/" + "haarcascade_frontalface_default.xml"
 for image in images:
+<<<<<<< HEAD
         dir_path
         detector = FaceDetector("""{put in here your variable (Unix/not Unix)}""") 
         faces_coord = detector.detect(image, True)
@@ -75,7 +84,18 @@ for image in images:
         for i, face in enumerate(faces):
                 cv2.imwrite('%s.jpeg' % (count), faces[i])
                 count += 1    
+=======
+    detector = FaceDetector(str(dir_path) + "/data" + "/haarcascade_frontalface_default.xml")   
+    faces_coord = detector.detect(image, True)
+    faces = normalize_faces(image ,faces_coord)
+    for i, face in enumerate(faces):
+        cv2.imwrite('%s.jpeg' % (count), faces[i])
+        count += 1 
+>>>>>>> ab96f0e17f81a4a6425e90af11d77b992831c7c7
 
+print(str(count))
+print(str(faces[i]))
 #Comments
-"""str(dir_path) + "data/" + "haarcascade_frontalface_default.xml"""
-"""C:\\Users\\MiniM\\Documents\\Github\\FacePasswordMac\\data\\haarcascade_frontalface_default.xml"""
+#str(dir_path) + "data/" + "haarcascade_frontalface_default.xml
+#C:\\Users\\MiniM\\Documents\\Github\\FacePasswordMac\\data\\haarcascade_frontalface_default.xml
+#face_cascade.load('haarcascade_frontalface_default.xml')
