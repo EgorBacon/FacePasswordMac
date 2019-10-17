@@ -61,17 +61,20 @@ def normalize_faces(image, faces_coord):
 
     faces = cut_faces(image, faces_coord)
     faces = resize(faces)
-    
     return faces
+count = 0
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
+Unix_path_detector = str(dir_path) + "\\data\\" + "haarcascade_frontalface_default.xml"
+mac_path_detector = str(dir_path) + "/data/" + "haarcascade_frontalface_default.xml"
 for image in images:
         dir_path
-        detector = FaceDetector("C:\\Users\\MiniM\\Documents\\Github\\FacePasswordMac\\data\\haarcascade_frontalface_default.xml") 
+        detector = FaceDetector("""{put in here your variable (Unix/not Unix)}""") 
         faces_coord = detector.detect(image, True)
         faces = normalize_faces(image ,faces_coord)
         for i, face in enumerate(faces):
                 cv2.imwrite('%s.jpeg' % (count), faces[i])
-                count += 1  
+                count += 1    
 
 #Comments
 """str(dir_path) + "data/" + "haarcascade_frontalface_default.xml"""
